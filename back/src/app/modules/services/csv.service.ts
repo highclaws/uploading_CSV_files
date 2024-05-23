@@ -34,11 +34,7 @@ export class CsvService {
               }
             }
 
-            if (errorRows.length > 0) {
-              resolve({ validatedRows, errorRows });
-            } else {
-              resolve({ validatedRows, errorRows });
-            }
+            resolve({ validatedRows, errorRows });
           }
         });
       },
@@ -103,7 +99,6 @@ export class CsvService {
 
     fs.unlinkSync(tempMalePath);
     fs.unlinkSync(tempFemalePath);
-    console.log(zipBuffer.length);
     return zipBuffer;
   }
 }
